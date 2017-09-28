@@ -115,6 +115,7 @@ resource "aws_autoscaling_policy" "up" {
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
   autoscaling_group_name = "${aws_autoscaling_group.prudential-asg.name}"
+
 }
 resource "aws_autoscaling_policy" "down" {
   name = "prudential-scalein"
@@ -186,3 +187,8 @@ load_balancer = "${aws_elb.prudential-elb.id}"
 lb_port = 80
 cookie_expiration_period = 600
 }
+
+
+
+
+
