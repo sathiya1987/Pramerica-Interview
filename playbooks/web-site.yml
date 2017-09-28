@@ -1,4 +1,4 @@
-- hosts: {{ variable_host | default('web')}}
+- hosts: tag_Dev
   remote_user: root
   become: yes
   become_method: sudo
