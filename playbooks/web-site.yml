@@ -1,4 +1,4 @@
-- hosts: {{ env }}-webservers
+- hosts: {{ variable_host | default('web')}}
   remote_user: root
   become: yes
   become_method: sudo
