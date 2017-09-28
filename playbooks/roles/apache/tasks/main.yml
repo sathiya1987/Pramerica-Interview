@@ -1,0 +1,8 @@
+- name: ensure apache is installed
+    yum: pkg=httpd state=latest
+- name: ensure apache is running
+    service: name=httpd state=running enabled=yes
+ - name: apache2 virtualhost on port 8081
+        template: src=virtualhost.conf dest=/etc/httpd/sites-available/{{ domain }}.conf
+        notify:
+        - restart apache2

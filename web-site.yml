@@ -1,0 +1,11 @@
+- hosts: {{ env }}-webservers
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  roles:
+    - apache
+    - tomcat
+  vars_files:
+    - "group_vars/tomcat-servers.yml"
+    - "group_vars/apache.yml"

@@ -1,0 +1,6 @@
+http_port: 80
+
+# This will configure a default manager-gui user:
+
+admin_username: admin
+admin_password: admin
