@@ -6,7 +6,7 @@ provider aws
     token ="${var.aws_token}"
  }
 resource "aws_vpc" "stage" {
-  cidr_block = "192.0.0.0/24"
+  cidr_block = "${var.vpc_cidr}
   tags {
         Name = "prudential-vpc"
     }
