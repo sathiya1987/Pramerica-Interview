@@ -127,7 +127,8 @@ resource "aws_autoscaling_policy" "down" {
 resource "aws_cloudwatch_metric_alarm" "high" {
     alarm_name = "prudential-alarm-high"
     comparison_operator = "GreaterThanOrEqualToThreshold"
-    evaluation_periods = "2"
+
+evaluation_periods = "2"
     metric_name = "CPUUtilization"
     namespace = "AWS/EC2"
     period = "120"
@@ -189,6 +190,9 @@ cookie_expiration_period = 600
 }
 
 
-
+provisioner "local-exec" {
+   command = "ansible-playbook -i ec2.py  -e tag_Name=prudential-demo web-site.yml "
+ }
+}
 
 
