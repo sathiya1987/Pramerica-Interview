@@ -196,7 +196,7 @@ cookie_expiration_period = 600
 
 
 provisioner "local-exec" {
-   command = "ansible-playbook -i ec2.py  -e tag_Env_Dev web-site.yml"
+   command = "ansible-playbook -i ec2.py  /playbooks/web-site.yml"
  }
 }
 
