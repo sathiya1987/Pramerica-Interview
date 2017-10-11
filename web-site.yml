@@ -1,11 +1,9 @@
-- hosts: tag_prudential-demo
-  remote_user: root
+- hosts: tag_Env_Dev
+  remote_user: ansible-admin
   become: yes
   become_method: sudo
 
   roles:
     - apache
     - tomcat
-  vars_files:
-    - "group_vars/tomcat-servers.yml"
-    - "group_vars/apache.yml"
+
