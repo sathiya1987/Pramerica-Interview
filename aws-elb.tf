@@ -107,6 +107,11 @@ resource "aws_autoscaling_group" "prudential-asg" {
     value="prudential-demo"
     propagate_at_launch = true
   }
+tag {
+    key="Env"
+    value="Dev"
+    propagate_at_launch = true
+  }
 }
 
 resource "aws_autoscaling_policy" "up" {
@@ -191,7 +196,7 @@ cookie_expiration_period = 600
 
 
 provisioner "local-exec" {
-   command = "ansible-playbook -i ec2.py  -e tag_Name=prudential-demo web-site.yml "
+   command = "ansible-playbook -i ec2.py  -e tag_Env_Dev web-site.yml"
  }
 }
 
