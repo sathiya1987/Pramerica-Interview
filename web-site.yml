@@ -1,9 +1,0 @@
-- hosts: tag_Env_Dev
-  remote_user: ansible-admin
-  become: yes
-  become_method: sudo
-
-  roles:
-    - apache
-    - tomcat
-
